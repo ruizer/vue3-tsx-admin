@@ -1,0 +1,23 @@
+import { defineComponent } from 'vue'
+{{#if type }}
+{{#compare type '2'}}
+import styles from './index.module.less'
+{{/compare}}
+{{/if}}
+
+const {{pascalCase name}} = defineComponent({
+  name: '{{kebabCase name}}',
+  setup() {
+    return () => (
+    {{#if type }}
+    {{#compare type '2'}}
+      <div class={styles['{{kebabCase name}}-page']}></div>
+    {{ else }}
+      <div class="{{kebabCase name}}-page"></div>
+    {{/compare}}
+    {{/if}}
+    )
+  }
+})
+
+export default {{pascalCase name}}

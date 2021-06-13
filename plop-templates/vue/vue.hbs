@@ -1,0 +1,24 @@
+<template>
+  <div class="{{kebabCase name}}-page"></div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue"
+export default defineComponent({
+  name: "{{kebabCase name}}",
+  setup() {
+    return {}
+  },
+})
+</script>
+
+{{#if type }}
+{{#compare type "2"}}
+<style lang="less" src="./index.less" scoped></style>
+{{ else }}
+<style lang="less" scoped>
+.{{kebabCase this.name}}-page {
+}
+</style>
+{{/compare}}
+{{/if}}
